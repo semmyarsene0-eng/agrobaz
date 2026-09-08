@@ -1,0 +1,66 @@
+.revenue {
+
+  padding: 40px;
+
+  max-width: 1000px;
+
+  margin: auto;
+
+}
+
+
+.revenue h1 {
+
+  text-align: center;
+
+  margin-bottom: 40px;
+
+  color: #1b5e20;
+
+}
+
+
+
+.revenue-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+
+}
+
+
+
+.revenue-card {
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  border: 1px solid #ddd;
+
+}
+
+
+
+.revenue-card h2 {
+
+  font-size: 20px;
+
+}
+
+
+
+.revenue-card p {
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+}

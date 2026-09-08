@@ -1,0 +1,536 @@
+/* =========================================================
+   AGROBAZ PRICE MAP — HOME PREVIEW
+   ========================================================= */
+
+.price-preview-section {
+  padding: 90px 0;
+  background:
+    linear-gradient(
+      180deg,
+      #f6f9f5 0%,
+      #ffffff 100%
+    );
+}
+
+.price-preview-container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.price-preview-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.price-preview-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #238447;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.price-preview-heading h2 {
+  max-width: 700px;
+  margin: 0 0 12px;
+  color: #17351f;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.price-preview-heading h2 span {
+  color: #c99a22;
+}
+
+.price-preview-heading p {
+  max-width: 660px;
+  margin: 0;
+  color: #728078;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.price-preview-link {
+  flex-shrink: 0;
+  padding: 13px 18px;
+  border: 1px solid #cbd9ce;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #238447;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.price-preview-link:hover {
+  border-color: #238447;
+  background: #eef7ef;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   MAIN FEATURE CARD
+   ========================================================= */
+
+.price-preview-card {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr;
+  overflow: hidden;
+  border: 1px solid #e0e9e1;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow:
+    0 20px 55px rgba(23, 53, 31, 0.09);
+}
+
+/* =========================================================
+   MAP AREA
+   ========================================================= */
+
+.price-preview-map-area {
+  min-height: 470px;
+  padding: 30px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(243, 201, 105, 0.15),
+      transparent 27%
+    ),
+    linear-gradient(
+      145deg,
+      #10351f,
+      #18502c
+    );
+  color: #ffffff;
+}
+
+.map-topline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.map-topline > div:first-child > span {
+  display: block;
+  color: #a6c9ae;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.map-topline h3 {
+  margin: 5px 0 0;
+  font-size: 28px;
+}
+
+.map-live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #d4e6d8;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.map-live-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #69dc85;
+}
+
+/* =========================================================
+   DECORATIVE MAP
+   ========================================================= */
+
+.preview-map {
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-map-shape {
+  position: relative;
+  width: min(390px, 82%);
+  height: 285px;
+  border: 2px solid rgba(255, 255, 255, 0.13);
+  border-radius: 44% 56% 49% 51% / 27% 35% 65% 73%;
+  background:
+    linear-gradient(
+      150deg,
+      rgba(70, 142, 84, 0.65),
+      rgba(29, 91, 49, 0.9)
+    );
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.18);
+  transform: rotate(-5deg);
+}
+
+/* REGION LABELS */
+
+.preview-region {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.preview-region.central {
+  left: 42%;
+  top: 48%;
+}
+
+.preview-region.eastern {
+  right: 13%;
+  top: 47%;
+}
+
+.preview-region.western {
+  left: 9%;
+  top: 55%;
+}
+
+.preview-region.northern {
+  left: 39%;
+  top: 20%;
+}
+
+/* MARKERS */
+
+.preview-marker {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(5deg);
+}
+
+.preview-marker span {
+  width: 12px;
+  height: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: #f3c969;
+  box-shadow:
+    0 0 0 6px rgba(243, 201, 105, 0.14),
+    0 0 18px rgba(243, 201, 105, 0.45);
+}
+
+.preview-marker small {
+  margin-top: 7px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: rgba(11, 32, 18, 0.72);
+  color: white;
+  font-size: 8px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* MARKER POSITIONS */
+
+.preview-marker.kampala {
+  left: 48%;
+  top: 59%;
+}
+
+.preview-marker.mbale {
+  right: 18%;
+  top: 48%;
+}
+
+.preview-marker.mbarara {
+  left: 30%;
+  top: 67%;
+}
+
+.preview-marker.gulu {
+  left: 51%;
+  top: 16%;
+}
+
+.preview-marker.lira {
+  right: 22%;
+  top: 28%;
+}
+
+/* MAP FOOTER */
+
+.preview-map-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #b8d0bd;
+  font-size: 11px;
+}
+
+/* =========================================================
+   MARKET LIST
+   ========================================================= */
+
+.price-preview-markets {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.preview-list-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8ede9;
+}
+
+.preview-list-header > div > span {
+  display: block;
+  color: #8a958d;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.preview-list-header h3 {
+  margin: 5px 0 0;
+  color: #17351f;
+  font-size: 21px;
+}
+
+.sample-badge {
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #fff5d6;
+  color: #866b18;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* LIST */
+
+.preview-market-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-market-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid #edf1ee;
+}
+
+.preview-market-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.preview-market-info strong {
+  color: #203727;
+  font-size: 14px;
+}
+
+.preview-market-info span {
+  color: #8a958d;
+  font-size: 11px;
+}
+
+.preview-market-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.preview-market-price strong {
+  color: #17351f;
+  font-size: 13px;
+}
+
+.preview-price-change {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.preview-price-change.up {
+  color: #238447;
+}
+
+.preview-price-change.down {
+  color: #b04444;
+}
+
+/* VIEW ALL */
+
+.preview-view-all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 22px;
+  color: #238447;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.preview-view-all span {
+  font-size: 18px;
+}
+
+.preview-view-all:hover {
+  color: #176735;
+}
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.price-preview-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.price-preview-benefits > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 20px;
+  border: 1px solid #e3ebe4;
+  border-radius: 17px;
+  background: white;
+}
+
+.price-preview-benefits > div > span {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #eef6ef;
+  font-size: 19px;
+}
+
+.price-preview-benefits strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #203727;
+  font-size: 13px;
+}
+
+.price-preview-benefits p {
+  margin: 0;
+  color: #7a857d;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .price-preview-card {
+    grid-template-columns: 1fr;
+  }
+
+  .price-preview-map-area {
+    min-height: auto;
+  }
+
+  .price-preview-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .price-preview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .price-preview-section {
+    padding: 65px 0;
+  }
+
+  .price-preview-heading h2 {
+    font-size: 34px;
+  }
+
+  .price-preview-link {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .price-preview-map-area,
+  .price-preview-markets {
+    padding: 22px;
+  }
+
+  .preview-map {
+    height: 285px;
+  }
+
+  .preview-map-shape {
+    width: 92%;
+    height: 240px;
+  }
+
+  .preview-map-footer {
+    flex-direction: column;
+  }
+
+  .price-preview-benefits > div {
+    padding: 17px;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .price-preview-heading h2 {
+    font-size: 30px;
+  }
+
+  .preview-market-row {
+    align-items: flex-start;
+  }
+
+  .preview-market-price strong {
+    font-size: 12px;
+  }
+}

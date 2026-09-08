@@ -1,0 +1,56 @@
+.tracking-page {
+
+background:#f7f7f7;
+
+min-height:100vh;
+
+padding:40px;
+
+}
+
+
+
+.tracking-page h1 {
+
+text-align:center;
+
+color:#1b5e20;
+
+}
+
+
+
+.tracking-card {
+
+max-width:600px;
+
+margin:auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.1);
+
+}
+
+
+
+.steps div {
+
+
+padding:20px;
+
+margin:15px 0;
+
+background:#f1f8e9;
+
+border-radius:12px;
+
+font-size:18px;
+
+
+}

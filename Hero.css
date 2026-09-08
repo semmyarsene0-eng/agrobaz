@@ -1,0 +1,96 @@
+.hero {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero-tag {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.hero-description {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 25px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-btn.primary {
+  background: #1f7a3f;
+  color: white;
+}
+
+.hero-btn.affiliate {
+  border: 2px solid #d4af37;
+  color: #8a6d00;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hero-stats strong {
+  font-size: 25px;
+}
+
+.hero-stats span {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-stats {
+    gap: 30px;
+  }
+}

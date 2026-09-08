@@ -1,0 +1,516 @@
+
+/* =========================================================
+   AGROBAZ — ADD PRODUCT
+   Premium Seller Product Creation Page
+   ========================================================= */
+
+:root {
+  --ap-forest: #123524;
+  --ap-forest-dark: #0b2618;
+  --ap-emerald: #1f7a4d;
+  --ap-emerald-dark: #155d39;
+  --ap-emerald-light: #e9f7ef;
+
+  --ap-gold: #d6a84f;
+  --ap-gold-dark: #a97d27;
+  --ap-gold-light: #fff5dc;
+
+  --ap-cream: #fffaf0;
+  --ap-white: #ffffff;
+
+  --ap-ink: #17221b;
+  --ap-text: #526057;
+  --ap-muted: #7c877f;
+
+  --ap-line: #dfe8e2;
+  --ap-soft: #f5f8f5;
+
+  --ap-danger: #c94b4b;
+
+  --ap-shadow-sm: 0 6px 18px rgba(18, 53, 36, 0.07);
+  --ap-shadow: 0 18px 50px rgba(18, 53, 36, 0.1);
+  --ap-shadow-lg: 0 28px 70px rgba(18, 53, 36, 0.14);
+
+  --ap-radius: 16px;
+  --ap-radius-lg: 24px;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.add-product {
+  min-height: calc(100vh - 70px);
+  padding: 55px 20px 90px;
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      rgba(214, 168, 79, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 15%,
+      rgba(31, 122, 77, 0.1),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fbf8 0%,
+      var(--ap-cream) 100%
+    );
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.add-product-card {
+  position: relative;
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding: 38px;
+  border: 1px solid rgba(31, 122, 77, 0.12);
+  border-radius: var(--ap-radius-lg);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: var(--ap-shadow-lg);
+  overflow: hidden;
+}
+
+.add-product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--ap-emerald),
+    var(--ap-gold),
+    var(--ap-emerald)
+  );
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.add-product-card h1 {
+  margin: 0;
+  color: var(--ap-forest-dark);
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.add-product-card > p {
+  margin: 11px 0 30px;
+  color: var(--ap-text);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.add-product form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.add-product form label {
+  margin-top: 8px;
+  color: var(--ap-forest);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.add-product form label:first-child {
+  margin-top: 0;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.add-product input,
+.add-product select,
+.add-product textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--ap-line);
+  border-radius: 11px;
+  background: #fbfdfb;
+  color: var(--ap-ink);
+  font-family: inherit;
+  font-size: 0.92rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-product input,
+.add-product select {
+  min-height: 50px;
+  padding: 0 14px;
+}
+
+.add-product textarea {
+  min-height: 135px;
+  padding: 14px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.add-product input::placeholder,
+.add-product textarea::placeholder {
+  color: #9ba59e;
+}
+
+.add-product input:hover,
+.add-product select:hover,
+.add-product textarea:hover {
+  border-color: #b9cabe;
+  background: var(--ap-white);
+}
+
+.add-product input:focus,
+.add-product select:focus,
+.add-product textarea:focus {
+  border-color: var(--ap-emerald);
+  background: var(--ap-white);
+  box-shadow:
+    0 0 0 4px rgba(31, 122, 77, 0.1);
+}
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.add-product select {
+  cursor: pointer;
+  appearance: auto;
+}
+
+/* =========================================================
+   NUMBER INPUTS
+   ========================================================= */
+
+.add-product input[type="number"] {
+  appearance: textfield;
+}
+
+.add-product input[type="number"]::-webkit-inner-spin-button,
+.add-product input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.7;
+}
+
+/* =========================================================
+   FILE INPUT
+   ========================================================= */
+
+.add-product input[type="file"] {
+  min-height: auto;
+  padding: 11px;
+  cursor: pointer;
+  background: var(--ap-soft);
+}
+
+.add-product input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 9px 13px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--ap-emerald);
+  color: var(--ap-white);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-product input[type="file"]::file-selector-button:hover {
+  background: var(--ap-forest);
+}
+
+/* =========================================================
+   SMALL HELP TEXT
+   ========================================================= */
+
+.add-product form small {
+  display: block;
+  margin-top: -3px;
+  color: var(--ap-muted);
+  font-size: 0.73rem;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   IMAGE PREVIEW
+   ========================================================= */
+
+.image-preview {
+  position: relative;
+  width: 100%;
+  margin: 8px 0 8px;
+  padding: 8px;
+  border: 1px solid var(--ap-line);
+  border-radius: 14px;
+  background: var(--ap-soft);
+  overflow: hidden;
+}
+
+.image-preview img {
+  display: block;
+  width: 100%;
+  max-height: 330px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   SELLER INFO
+   ========================================================= */
+
+.seller-info-note {
+  margin-top: 13px;
+  padding: 16px 17px;
+  border: 1px solid rgba(214, 168, 79, 0.25);
+  border-radius: 13px;
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf0,
+      #fffdf7
+    );
+}
+
+.seller-info-note p {
+  margin: 0;
+  color: var(--ap-text);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.seller-info-note p + p {
+  margin-top: 7px;
+}
+
+.seller-info-note p:last-child {
+  color: var(--ap-forest);
+  font-weight: 700;
+}
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.add-product form button[type="submit"] {
+  position: relative;
+  width: 100%;
+  min-height: 54px;
+  margin-top: 13px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 12px;
+  background:
+    linear-gradient(
+      135deg,
+      var(--ap-emerald),
+      var(--ap-emerald-dark)
+    );
+  color: var(--ap-white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow:
+    0 10px 24px rgba(31, 122, 77, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.add-product form button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-3px);
+  background:
+    linear-gradient(
+      135deg,
+      var(--ap-forest),
+      var(--ap-emerald-dark)
+    );
+  box-shadow:
+    0 15px 32px rgba(31, 122, 77, 0.27);
+}
+
+.add-product form button[type="submit"]:active:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.add-product form button[type="submit"]:disabled {
+  opacity: 0.62;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =========================================================
+   DISABLED FORM FIELDS
+   ========================================================= */
+
+.add-product input:disabled,
+.add-product select:disabled,
+.add-product textarea:disabled {
+  background: #f0f3f1;
+  color: #89928c;
+  cursor: not-allowed;
+}
+
+.add-product input[type="file"]:disabled {
+  opacity: 0.65;
+}
+
+/* =========================================================
+   FORM SECTIONS — VISUAL SEPARATION
+   ========================================================= */
+
+.add-product form > label:nth-of-type(1) {
+  margin-top: 0;
+}
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+   ========================================================= */
+
+.add-product input:focus-visible,
+.add-product select:focus-visible,
+.add-product textarea:focus-visible,
+.add-product button:focus-visible {
+  outline: 3px solid rgba(214, 168, 79, 0.4);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .add-product {
+    padding: 35px 16px 65px;
+  }
+
+  .add-product-card {
+    padding: 30px 25px;
+    border-radius: 20px;
+  }
+
+  .add-product-card h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+  .add-product {
+    min-height: 100vh;
+    padding: 20px 12px 50px;
+  }
+
+  .add-product-card {
+    padding: 25px 18px;
+    border-radius: 18px;
+  }
+
+  .add-product-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .add-product-card > p {
+    margin-bottom: 24px;
+    font-size: 0.88rem;
+  }
+
+  .add-product form {
+    gap: 8px;
+  }
+
+  .add-product form label {
+    font-size: 0.78rem;
+  }
+
+  .add-product input,
+  .add-product select {
+    min-height: 48px;
+    font-size: 0.88rem;
+  }
+
+  .add-product textarea {
+    min-height: 125px;
+    font-size: 0.88rem;
+  }
+
+  .image-preview img {
+    max-height: 250px;
+  }
+
+  .seller-info-note {
+    padding: 14px;
+  }
+
+  .add-product form button[type="submit"] {
+    min-height: 52px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .add-product-card {
+    padding: 22px 15px;
+  }
+
+  .add-product-card h1 {
+    font-size: 1.6rem;
+  }
+
+  .add-product input[type="file"]::file-selector-button {
+    margin-right: 7px;
+    padding: 8px 9px;
+    font-size: 0.7rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .add-product input,
+  .add-product select,
+  .add-product textarea,
+  .add-product form button[type="submit"] {
+    transition: none;
+  }
+}
+

@@ -1,0 +1,350 @@
+
+/* ================================
+   AGROBAZ ADMIN SELLERS
+   ================================ */
+
+.admin-sellers-page {
+  min-height: 100vh;
+  background: #f5f7f4;
+  padding: 40px 20px 70px;
+}
+
+.admin-sellers-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.admin-sellers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.admin-sellers-header h1 {
+  margin: 5px 0 8px;
+  font-size: 34px;
+  color: #17251a;
+}
+
+.admin-sellers-header p {
+  margin: 0;
+  color: #68736a;
+  font-size: 15px;
+}
+
+.admin-sellers-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #b38a28;
+}
+
+/* Back button */
+
+.admin-back-button {
+  border: none;
+  background: transparent;
+  color: #49664e;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.admin-back-button:hover {
+  color: #b38a28;
+}
+
+/* Summary cards */
+
+.admin-sellers-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.admin-seller-stat {
+  background: #ffffff;
+  border: 1px solid #e3e8e2;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.admin-seller-stat span {
+  display: block;
+  color: #707970;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.admin-seller-stat strong {
+  display: block;
+  font-size: 30px;
+  color: #1b2a1e;
+}
+
+/* Filters */
+
+.admin-sellers-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.admin-seller-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-seller-filter {
+  border: 1px solid #d8dfd8;
+  background: #ffffff;
+  color: #4c594e;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.admin-seller-filter:hover {
+  border-color: #b38a28;
+}
+
+.admin-seller-filter.active {
+  background: #1d4d2a;
+  border-color: #1d4d2a;
+  color: #ffffff;
+}
+
+/* Seller list */
+
+.admin-sellers-list {
+  display: grid;
+  gap: 16px;
+}
+
+.admin-seller-card {
+  background: #ffffff;
+  border: 1px solid #e2e7e1;
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.admin-seller-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.admin-seller-avatar {
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #edf2ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.admin-seller-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-seller-info {
+  min-width: 0;
+}
+
+.admin-seller-info h3 {
+  margin: 0 0 5px;
+  color: #1d2b20;
+  font-size: 18px;
+}
+
+.admin-seller-info p {
+  margin: 3px 0;
+  color: #6c756d;
+  font-size: 14px;
+}
+
+.admin-seller-email {
+  word-break: break-word;
+}
+
+/* Status */
+
+.admin-seller-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.admin-seller-status.verified {
+  background: #e4f4e7;
+  color: #236c31;
+}
+
+.admin-seller-status.pending {
+  background: #fff4d6;
+  color: #8a6817;
+}
+
+.admin-seller-status.rejected {
+  background: #fde7e7;
+  color: #a33838;
+}
+
+/* Actions */
+
+.admin-seller-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.admin-seller-actions button {
+  border: none;
+  padding: 9px 13px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.admin-seller-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.admin-seller-approve {
+  background: #e1f2e4;
+  color: #21662d;
+}
+
+.admin-seller-pending {
+  background: #fff1cf;
+  color: #826117;
+}
+
+.admin-seller-reject {
+  background: #fbe3e3;
+  color: #9b3030;
+}
+
+/* Empty state */
+
+.admin-sellers-empty {
+  background: #ffffff;
+  border: 1px dashed #cfd8cf;
+  border-radius: 18px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.admin-sellers-empty h3 {
+  margin: 0 0 8px;
+  color: #26352a;
+}
+
+.admin-sellers-empty p {
+  margin: 0;
+  color: #747d75;
+}
+
+/* Loading */
+
+.admin-sellers-loading {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #59655c;
+}
+
+.admin-sellers-spinner {
+  width: 38px;
+  height: 38px;
+  border: 4px solid #dfe6df;
+  border-top-color: #1d4d2a;
+  border-radius: 50%;
+  animation: adminSellerSpin 0.8s linear infinite;
+  margin-bottom: 14px;
+}
+
+@keyframes adminSellerSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .admin-sellers-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-seller-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-seller-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-sellers-page {
+    padding: 25px 14px 50px;
+  }
+
+  .admin-sellers-header h1 {
+    font-size: 28px;
+  }
+
+  .admin-sellers-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-seller-main {
+    align-items: flex-start;
+  }
+
+  .admin-seller-actions {
+    width: 100%;
+  }
+
+  .admin-seller-actions button {
+    flex: 1;
+  }
+}
+

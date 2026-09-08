@@ -1,0 +1,206 @@
+.suppliers-page{
+
+background:#f7f7f7;
+
+min-height:100vh;
+
+padding-bottom:50px;
+
+}
+
+
+
+.supplier-hero{
+
+background:#1b5e20;
+
+color:white;
+
+padding:70px 30px;
+
+text-align:center;
+
+}
+
+
+
+.supplier-hero h1{
+
+font-size:45px;
+
+}
+
+
+
+.supplier-section{
+
+padding:40px;
+
+text-align:center;
+
+}
+
+
+
+.supplier-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:25px;
+
+}
+
+
+
+.supplier-grid div{
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.1);
+
+}
+
+
+
+.suppliers-page button{
+
+display:block;
+
+margin:auto;
+
+padding:15px 40px;
+
+background:#d4af37;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
+
+
+
+@media(max-width:768px){
+
+.supplier-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}/* ==========================================
+   SELLER PROFILE PHOTO
+========================================== */
+
+.seller-avatar {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e8f3e8;
+  border: 4px solid #d4e7d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+}
+
+.seller-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================
+   SELLER NAME
+========================================== */
+
+.seller-person-name {
+  margin: 5px 0;
+  color: #56645a;
+  font-size: 15px;
+}
+
+/* ==========================================
+   SELLER DETAILS
+========================================== */
+
+.seller-details {
+  background: #ffffff;
+  border: 1px solid #e2e8e3;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.seller-details h2 {
+  margin: 0 0 18px;
+  color: #183d26;
+}
+
+.seller-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.seller-detail-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.seller-detail-item > span {
+  font-size: 22px;
+}
+
+.seller-detail-item strong {
+  display: block;
+  color: #344139;
+  margin-bottom: 4px;
+}
+
+.seller-detail-item p {
+  margin: 0;
+  color: #69756d;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .seller-profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .seller-name-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .seller-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seller-avatar {
+    width: 105px;
+    height: 105px;
+    min-width: 105px;
+  }
+}

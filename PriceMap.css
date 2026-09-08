@@ -1,0 +1,1324 @@
+
+/* =========================================================
+   AGROBAZ PRICE MAP
+   NEW PREMIUM MARKET EXPLORER DESIGN
+   ========================================================= */
+
+.price-map-page {
+  min-height: 100vh;
+  background: #f4f7f3;
+  color: #18351f;
+  overflow-x: hidden;
+}
+
+.price-map-container {
+  width: min(1240px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.price-map-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 58px 0 92px;
+  background:
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(243, 201, 105, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #0c2f1b 0%,
+      #124525 48%,
+      #1f6037 100%
+    );
+  color: white;
+}
+
+.price-map-hero::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -180px;
+  top: -280px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.price-map-hero::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  right: -90px;
+  top: -200px;
+  border: 1px solid rgba(243, 201, 105, 0.12);
+  border-radius: 50%;
+}
+
+.price-map-hero .price-map-container {
+  position: relative;
+  z-index: 2;
+}
+
+.price-map-hero-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.price-map-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 8px 13px;
+  border: 1px solid rgba(243, 201, 105, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #f3c969;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+}
+
+.price-map-hero h1 {
+  max-width: 760px;
+  margin: 0 0 18px;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 0.98;
+  letter-spacing: -2px;
+}
+
+.price-map-hero h1 span {
+  color: #f3c969;
+}
+
+.price-map-hero p {
+  max-width: 690px;
+  margin: 0;
+  color: #cfe0d3;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.price-map-hero-stat {
+  min-width: 175px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.price-map-hero-stat span,
+.price-map-hero-stat small {
+  display: block;
+  color: #b7cdbb;
+  font-size: 11px;
+}
+
+.price-map-hero-stat strong {
+  display: block;
+  margin: 4px 0;
+  color: #f3c969;
+  font-size: 37px;
+  line-height: 1;
+}
+
+.price-map-hero-stat small {
+  color: #96b49e;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.price-map-main {
+  padding: 0 0 90px;
+}
+
+/* =========================================================
+   FILTER BAR
+   ========================================================= */
+
+.price-map-filters {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1.5fr 0.75fr 0.75fr;
+  gap: 12px;
+  margin-top: -38px;
+  padding: 15px;
+  border: 1px solid #e1e9e2;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 55px rgba(23, 53, 31, 0.1);
+  backdrop-filter: blur(15px);
+}
+
+.price-filter-search {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #dce5de;
+  border-radius: 12px;
+  background: #f9fbf9;
+}
+
+.price-filter-search span {
+  color: #6e8173;
+  font-size: 17px;
+}
+
+.price-filter-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #18351f;
+  font: inherit;
+  font-size: 13px;
+}
+
+.price-filter-search input::placeholder {
+  color: #9aa69d;
+}
+
+.price-map-filters select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #dce5de;
+  border-radius: 12px;
+  outline: 0;
+  background: #f9fbf9;
+  color: #294032;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   SUMMARY STRIP
+   ========================================================= */
+
+.price-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.price-summary-card {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 22px;
+  border: 1px solid #e1e9e2;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 25px rgba(23, 53, 31, 0.045);
+}
+
+.price-summary-card::after {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  background: #eef6ef;
+}
+
+.price-summary-card span {
+  display: block;
+  color: #8a968d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.price-summary-card strong {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: 7px 0 4px;
+  color: #17351f;
+  font-size: 22px;
+}
+
+.price-summary-card small {
+  color: #78857c;
+  font-size: 11px;
+}
+
+/* =========================================================
+   MAIN MAP LAYOUT
+   ========================================================= */
+
+.price-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(290px, 0.75fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+/* =========================================================
+   MAP CARD
+   ========================================================= */
+
+.uganda-map-card {
+  overflow: hidden;
+  border: 1px solid #dfe8e0;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 18px 50px rgba(23, 53, 31, 0.075);
+}
+
+.map-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 25px;
+  border-bottom: 1px solid #edf1ee;
+}
+
+.map-card-header > div:first-child > span {
+  display: block;
+  margin-bottom: 4px;
+  color: #8a968d;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+}
+
+.map-card-header h2 {
+  margin: 0;
+  color: #17351f;
+  font-size: 22px;
+}
+
+.map-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: #edf7ef;
+  color: #248149;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.map-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #48b56a;
+}
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.uganda-map {
+  min-height: 540px;
+  padding: 25px;
+  background:
+    radial-gradient(
+      circle at 18% 20%,
+      rgba(31, 99, 56, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #f7faf7,
+      #edf5ee
+    );
+}
+
+.uganda-silhouette {
+  position: relative;
+  width: min(650px, 88%);
+  height: 475px;
+  margin: 10px auto 0;
+
+  /*
+   * Decorative map silhouette.
+   * The market markers remain fully interactive.
+   */
+  border: 2px solid #bfd1c2;
+  border-radius: 45% 55% 48% 52% / 25% 32% 68% 75%;
+  background:
+    linear-gradient(
+      145deg,
+      #cde2d0,
+      #b6d4bc
+    );
+  box-shadow:
+    inset 0 0 0 14px rgba(255, 255, 255, 0.35),
+    0 25px 50px rgba(35, 79, 46, 0.08);
+
+  transform: rotate(-4deg);
+}
+
+/* subtle map texture */
+
+.uganda-silhouette::before,
+.uganda-silhouette::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(35, 91, 50, 0.16);
+}
+
+.uganda-silhouette::before {
+  width: 250px;
+  height: 250px;
+  left: 14%;
+  top: 25%;
+}
+
+.uganda-silhouette::after {
+  width: 150px;
+  height: 150px;
+  right: 17%;
+  top: 18%;
+}
+
+/* =========================================================
+   REGION LABELS
+   ========================================================= */
+
+.map-label {
+  position: absolute;
+  z-index: 2;
+  color: rgba(21, 70, 33, 0.32);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  transform: rotate(4deg);
+  pointer-events: none;
+}
+
+.map-north {
+  top: 18%;
+  left: 40%;
+}
+
+.map-east {
+  top: 43%;
+  right: 8%;
+}
+
+.map-west {
+  left: 7%;
+  top: 53%;
+}
+
+.map-central {
+  left: 42%;
+  top: 49%;
+}
+
+/* =========================================================
+   MARKET MARKERS
+   ========================================================= */
+
+.map-marker {
+  position: absolute;
+  z-index: 8;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 4px solid white;
+  border-radius: 50%;
+  background: #d6ad3d;
+  box-shadow:
+    0 0 0 6px rgba(214, 173, 61, 0.14),
+    0 8px 20px rgba(30, 75, 40, 0.18);
+  cursor: pointer;
+  transform: rotate(4deg);
+  transition: 0.2s ease;
+}
+
+.map-marker:hover,
+.map-marker.active {
+  background: #238447;
+  transform: rotate(4deg) scale(1.25);
+  box-shadow:
+    0 0 0 8px rgba(35, 132, 71, 0.12),
+    0 10px 24px rgba(30, 75, 40, 0.2);
+}
+
+.marker-dot {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.marker-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) rotate(4deg);
+  padding: 7px 9px;
+  border-radius: 8px;
+  background: #16351f;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.map-marker:hover .marker-tooltip,
+.map-marker.active .marker-tooltip {
+  opacity: 1;
+}
+
+/* =========================================================
+   MAP EMPTY
+   ========================================================= */
+
+.map-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #66756b;
+  text-align: center;
+}
+
+.map-empty span {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.map-empty strong {
+  color: #233c2b;
+  font-size: 16px;
+}
+
+.map-empty p {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+
+/* =========================================================
+   MAP LEGEND
+   ========================================================= */
+
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 25px;
+  border-top: 1px solid #edf1ee;
+  color: #7b877f;
+  font-size: 11px;
+}
+
+.map-legend div {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot.high {
+  background: #238447;
+}
+
+.legend-dot.medium {
+  background: #d6ad3d;
+}
+
+.legend-dot.low {
+  background: #b1beb4;
+}
+
+/* =========================================================
+   MARKET DETAIL PANEL
+   ========================================================= */
+
+.market-detail-panel {
+  position: relative;
+  min-height: 100%;
+  padding: 27px;
+  border: 1px solid #dfe8e0;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7faf7 100%
+    );
+  box-shadow: 0 18px 50px rgba(23, 53, 31, 0.065);
+}
+
+.close-market {
+  position: absolute;
+  top: 21px;
+  right: 21px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #dfe7df;
+  border-radius: 9px;
+  background: white;
+  color: #65736a;
+  cursor: pointer;
+}
+
+.market-detail-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #8a958d;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+}
+
+.market-detail-panel h2 {
+  margin: 0;
+  color: #17351f;
+  font-size: 29px;
+}
+
+.market-location {
+  margin: 6px 0 22px;
+  color: #78857b;
+  font-size: 12px;
+}
+
+.market-price-box {
+  padding: 22px;
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      135deg,
+      #123a22,
+      #21663b
+    );
+  color: white;
+  box-shadow: 0 15px 35px rgba(21, 73, 37, 0.15);
+}
+
+.market-price-box span {
+  display: block;
+  color: #b9d4bf;
+  font-size: 10px;
+}
+
+.market-price-box strong {
+  display: block;
+  margin: 7px 0 3px;
+  color: #f3c969;
+  font-size: 30px;
+}
+
+.market-price-box small {
+  color: #b8cfbc;
+  font-size: 10px;
+}
+
+.price-change {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 17px 0 25px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.price-change span {
+  color: #849087;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.price-change.up {
+  color: #238447;
+}
+
+.price-change.down {
+  color: #b44b4b;
+}
+
+.market-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 0;
+  border-top: 1px solid #e7ede8;
+}
+
+.market-info-row span {
+  color: #87928a;
+  font-size: 11px;
+}
+
+.market-info-row strong {
+  color: #263d2d;
+  font-size: 12px;
+}
+
+.data-status {
+  color: #8a6f20 !important;
+}
+
+/* EMPTY PANEL */
+
+.market-empty-state {
+  height: 100%;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.market-empty-state > div {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #edf6ee;
+  font-size: 28px;
+}
+
+.market-empty-state h3 {
+  margin: 0 0 7px;
+  color: #24402d;
+  font-size: 18px;
+}
+
+.market-empty-state p {
+  max-width: 230px;
+  margin: 0;
+  color: #7c887f;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   PRICE BOARD
+   ========================================================= */
+
+.price-table-section {
+  margin-top: 55px;
+}
+
+.price-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.price-section-heading > div > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #238447;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+}
+
+.price-section-heading h2 {
+  margin: 0;
+  color: #17351f;
+  font-size: 30px;
+}
+
+.price-section-heading > small {
+  color: #88948b;
+  font-size: 11px;
+}
+
+.price-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e0e8e1;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 14px 35px rgba(23, 53, 31, 0.055);
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table th {
+  padding: 15px 18px;
+  border-bottom: 1px solid #e7eee8;
+  background: #f9fbf9;
+  color: #88948c;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.price-table td {
+  padding: 17px 18px;
+  border-bottom: 1px solid #eef2ef;
+  color: #627066;
+  font-size: 12px;
+}
+
+.price-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.price-table tbody tr {
+  transition: 0.2s ease;
+}
+
+.price-table tbody tr:hover {
+  background: #f7faf7;
+}
+
+.price-table td:first-child {
+  min-width: 145px;
+}
+
+.price-table td:first-child strong,
+.price-table td:first-child span {
+  display: block;
+}
+
+.price-table td:first-child strong {
+  margin-bottom: 3px;
+  color: #203727;
+}
+
+.price-table td:first-child span {
+  color: #9aa59d;
+  font-size: 10px;
+}
+
+.crop-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #eef6ef;
+  color: #278149;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.table-change {
+  font-weight: 900;
+}
+
+.table-change.up {
+  color: #238447;
+}
+
+.table-change.down {
+  color: #b24b4b;
+}
+
+.view-market-button {
+  padding: 8px 12px;
+  border: 1px solid #cddbcf;
+  border-radius: 9px;
+  background: white;
+  color: #238447;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.view-market-button:hover {
+  border-color: #238447;
+  background: #eef7ef;
+}
+
+.table-empty {
+  padding: 45px;
+  color: #78857c;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* =========================================================
+   FARMER TIP
+   ========================================================= */
+
+.price-farmer-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 25px;
+  padding: 20px 22px;
+  border: 1px solid #e6d9ad;
+  border-radius: 18px;
+  background: #fffaf0;
+}
+
+.tip-icon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: #fff0c5;
+  font-size: 20px;
+}
+
+.price-farmer-tip > div:last-child > span {
+  display: block;
+  margin-bottom: 4px;
+  color: #9b7b21;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+
+.price-farmer-tip h3 {
+  margin: 0 0 5px;
+  color: #51461e;
+  font-size: 16px;
+}
+
+.price-farmer-tip p {
+  margin: 0;
+  color: #7c6e3d;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.price-map-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 25px;
+  padding: 34px 38px;
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(243, 201, 105, 0.14),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #123a22,
+      #24653b
+    );
+  color: white;
+}
+
+.price-map-cta > div > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #f3c969;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+}
+
+.price-map-cta h2 {
+  margin: 0 0 6px;
+  font-size: 26px;
+}
+
+.price-map-cta p {
+  margin: 0;
+  color: #c6dbc9;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.price-cta-button {
+  flex-shrink: 0;
+  padding: 13px 19px;
+  border-radius: 11px;
+  background: #f3c969;
+  color: #17351f;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 900;
+  transition: 0.2s ease;
+}
+
+.price-cta-button:hover {
+  background: #ffd97b;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   DATA NOTE
+   ========================================================= */
+
+.price-data-note {
+  max-width: 850px;
+  margin: 20px auto 0;
+  color: #8b958e;
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.price-data-note strong {
+  color: #6c786f;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .price-map-hero-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .price-map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .market-detail-panel {
+    min-height: auto;
+  }
+
+  .market-empty-state {
+    min-height: 300px;
+  }
+
+  .price-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .price-map-container {
+    width: 94%;
+  }
+
+  .price-map-hero {
+    padding: 42px 0 70px;
+  }
+
+  .price-map-hero h1 {
+    font-size: 40px;
+  }
+
+  .price-map-hero p {
+    font-size: 14px;
+  }
+
+  .price-map-hero-stat {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .price-map-filters {
+    grid-template-columns: 1fr;
+    margin-top: -30px;
+    padding: 11px;
+  }
+
+  .price-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .price-summary-card {
+    padding: 17px;
+  }
+
+  .price-summary-card strong {
+    font-size: 18px;
+  }
+
+  .map-card-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .uganda-map {
+    min-height: 430px;
+    padding: 15px;
+  }
+
+  .uganda-silhouette {
+    width: 95%;
+    height: 350px;
+  }
+
+  .map-legend {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .price-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .price-map-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 28px 25px;
+  }
+
+  .price-cta-button {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .price-map-hero h1 {
+    font-size: 35px;
+  }
+
+  .price-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-card-header h2 {
+    font-size: 20px;
+  }
+
+  .uganda-map {
+    min-height: 360px;
+  }
+
+  .uganda-silhouette {
+    height: 290px;
+  }
+
+  .map-label {
+    font-size: 7px;
+  }
+
+  .market-detail-panel {
+    padding: 22px;
+  }
+
+  .market-price-box strong {
+    font-size: 26px;
+  }
+}/* =========================================================
+   REAL LEAFLET PRICE MAP
+   ========================================================= */
+
+.real-price-map {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  background: #e9f0e9;
+}
+
+.leaflet-map {
+  width: 100%;
+  height: 560px;
+  z-index: 1;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px;
+}
+
+.real-map-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 14px 22px;
+  border-top: 1px solid #e7eee8;
+  color: #78857c;
+  font-size: 10px;
+}
+
+.table-unit {
+  margin-left: 4px;
+  color: #8a968d;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.price-source-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 25px;
+  padding: 22px;
+  border: 1px solid #dfe8e0;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(23, 53, 31, 0.045);
+}
+
+.source-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: #edf6ee;
+  font-size: 20px;
+}
+
+.price-source-card span {
+  display: block;
+  margin-bottom: 4px;
+  color: #238447;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.price-source-card h3 {
+  margin: 0 0 6px;
+  color: #17351f;
+  font-size: 17px;
+}
+
+.price-source-card p {
+  max-width: 800px;
+  margin: 0;
+  color: #78857c;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.price-map-loading,
+.price-map-error {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.price-map-loading h2,
+.price-map-error h2 {
+  margin: 18px 0 7px;
+  color: #17351f;
+}
+
+.price-map-loading p,
+.price-map-error p {
+  max-width: 450px;
+  margin: 0;
+  color: #78857c;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.price-loading-spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #dce8df;
+  border-top-color: #238447;
+  border-radius: 50%;
+  animation: price-map-spin 0.8s linear infinite;
+}
+
+.price-map-error > div {
+  font-size: 38px;
+}
+
+.price-map-error button {
+  margin-top: 20px;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #238447;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@keyframes price-map-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   MOBILE REAL MAP
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .real-price-map {
+    min-height: 420px;
+  }
+
+  .leaflet-map {
+    height: 420px;
+  }
+
+  .real-map-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price-source-card {
+    padding: 18px;
+  }
+}
+

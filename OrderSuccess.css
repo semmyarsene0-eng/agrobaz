@@ -1,0 +1,27 @@
+.success-page{
+
+padding:50px;
+
+text-align:center;
+
+}
+
+
+.success-page h1{
+
+color:#2e7d32;
+
+}
+
+
+.success-page button{
+
+padding:15px 25px;
+
+border-radius:10px;
+
+border:none;
+
+cursor:pointer;
+
+}

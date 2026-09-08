@@ -1,0 +1,102 @@
+.affiliate-products {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.affiliate-products-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.affiliate-products-header h1 {
+  margin-bottom: 10px;
+}
+
+.affiliate-products-header p {
+  opacity: 0.7;
+}
+
+.affiliate-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.affiliate-product-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.affiliate-product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.affiliate-product-info {
+  padding: 20px;
+}
+
+.affiliate-product-info h2 {
+  margin-top: 0;
+}
+
+.affiliate-product-info button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.affiliate-link-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.affiliate-link-box input {
+  min-width: 0;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+}
+
+.affiliate-link-box button {
+  width: auto;
+  margin: 0;
+}
+
+.back-button {
+  margin-top: 30px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.affiliate-empty {
+  text-align: center;
+  padding: 50px;
+}
+
+@media (max-width: 900px) {
+  .affiliate-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .affiliate-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .affiliate-products {
+    padding: 20px 12px;
+  }
+}
