@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import RoleProtectedRoute from "./components/RoleProtectedRoute";
-import AIDoctor from "./pages/AIDoctor";
+import Commission from "./components/Commission";
+
 // ================= PAGES =================
 import Home from "./pages/Home";
 import Marketplace from "./pages/Marketplace";
@@ -12,25 +13,26 @@ import ProductDetails from "./pages/ProductDetails.jsx";
 import Suppliers from "./pages/Suppliers";
 import Contact from "./pages/Contact";
 import PriceMap from "./pages/PriceMap";
+import AIDoctor from "./pages/AIDoctor";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import BuyerProfile from "./pages/BuyerProfile";
-
 import SellerProfile from "./pages/SellerProfile";
+
 import SellerDashboard from "./pages/SellerDashboard";
 import AddProduct from "./pages/AddProduct";
 import SellerMessages from "./pages/SellerMessages";
-
 import Checkout from "./pages/Checkout";
+
 import OrderSuccess from "./pages/OrderSuccess";
 import Orders from "./pages/Orders";
 import OrderTracking from "./pages/OrderTracking";
 
 import Revenue from "./pages/Revenue";
-import Commission from "./pages/Commission";
 
 // ================= AFFILIATE =================
 import AffiliateProducts from "./pages/AffiliateProducts";
@@ -51,12 +53,22 @@ function App() {
           path="/"
           element={<Home />}
         />
-<Route path="/ai-doctor" element={<AIDoctor />} />
+
+        <Route
+          path="/ai-doctor"
+          element={<AIDoctor />}
+        />
+
         <Route
           path="/marketplace"
           element={<Marketplace />}
         />
-<Route path="/price-map" element={<PriceMap />} />
+
+        <Route
+          path="/price-map"
+          element={<PriceMap />}
+        />
+
         <Route
           path="/product/:id"
           element={<ProductDetails />}
