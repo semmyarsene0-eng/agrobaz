@@ -1,0 +1,591 @@
+
+/* =========================================================
+   AGROBAZ MARKET
+   GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+/* ---------- COLOR SYSTEM ---------- */
+
+:root {
+  --agro-green: #1f5d35;
+  --agro-green-dark: #153f25;
+  --agro-green-light: #eaf4ed;
+
+  --agro-gold: #c49a3a;
+  --agro-gold-dark: #9b7626;
+  --agro-gold-light: #fff7df;
+
+  --white: #ffffff;
+  --black: #172018;
+
+  --text-primary: #1c2a20;
+  --text-secondary: #657067;
+  --text-muted: #89928b;
+
+  --background: #f7f9f7;
+  --surface: #ffffff;
+  --surface-soft: #f0f4f0;
+
+  --border: #e0e6e1;
+  --border-dark: #ccd5ce;
+
+  --success: #278244;
+  --success-bg: #e8f5eb;
+
+  --warning: #a87917;
+  --warning-bg: #fff5d9;
+
+  --danger: #bd3d3d;
+  --danger-bg: #fdeaea;
+
+  --shadow-sm: 0 2px 8px rgba(22, 45, 28, 0.06);
+  --shadow: 0 8px 25px rgba(22, 45, 28, 0.09);
+  --shadow-lg: 0 18px 45px rgba(22, 45, 28, 0.13);
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  --transition: 0.25s ease;
+}
+
+
+/* ---------- GLOBAL RESET ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--text-primary);
+  background: var(--background);
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* ---------- LINKS ---------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+/* ---------- IMAGES ---------- */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   GLOBAL LAYOUT
+   ========================================================= */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+/* =========================================================
+   GLOBAL CONTAINERS
+   ========================================================= */
+
+.container,
+.page-container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   PROFESSIONAL BUTTON SYSTEM
+   ========================================================= */
+
+.btn,
+.primary-button,
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 11px 20px;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+
+  background: var(--agro-green);
+  color: var(--white);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.btn:hover,
+.primary-button:hover,
+.primary-btn:hover {
+  background: var(--agro-green-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+
+/* ---------- GOLD BUTTON ---------- */
+
+.gold-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 11px 20px;
+
+  border: 1px solid var(--agro-gold);
+  border-radius: var(--radius-sm);
+
+  background: var(--agro-gold);
+  color: var(--white);
+
+  font-weight: 700;
+
+  transition: var(--transition);
+}
+
+.gold-button:hover,
+.secondary-button:hover {
+  background: var(--agro-gold-dark);
+  border-color: var(--agro-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+
+/* ---------- OUTLINE BUTTON ---------- */
+
+.outline-button,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 44px;
+  padding: 10px 20px;
+
+  border: 1px solid var(--agro-green);
+  border-radius: var(--radius-sm);
+
+  background: transparent;
+  color: var(--agro-green);
+
+  font-weight: 700;
+
+  transition: var(--transition);
+}
+
+.outline-button:hover,
+.secondary-btn:hover {
+  background: var(--agro-green-light);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card,
+.dashboard-card,
+.product-card,
+.seller-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.card:hover,
+.dashboard-card:hover,
+.product-card:hover,
+.seller-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: #d2dbd4;
+}
+
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+
+  background: var(--white);
+  color: var(--text-primary);
+
+  outline: none;
+
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--agro-green);
+
+  box-shadow:
+    0 0 0 3px rgba(31, 93, 53, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.badge-success,
+.verified-badge {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.badge-warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.badge-danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+
+/* =========================================================
+   PAGE SECTIONS
+   ========================================================= */
+
+section {
+  width: 100%;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--agro-gold-dark);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin-bottom: 8px;
+
+  font-size: clamp(25px, 4vw, 36px);
+}
+
+.section-heading p {
+  max-width: 650px;
+
+  margin-bottom: 0;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading-container {
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  color: var(--text-secondary);
+}
+
+.spinner {
+  width: 38px;
+  height: 38px;
+
+  margin-bottom: 14px;
+
+  border: 4px solid var(--border);
+  border-top-color: var(--agro-green);
+
+  border-radius: 50%;
+
+  animation: agroSpin 0.8s linear infinite;
+}
+
+@keyframes agroSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   EMPTY STATES
+   ========================================================= */
+
+.empty-state {
+  padding: 50px 25px;
+
+  text-align: center;
+
+  background: var(--surface);
+
+  border: 1px dashed var(--border-dark);
+  border-radius: var(--radius-lg);
+}
+
+.empty-state h3 {
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.alert {
+  padding: 13px 16px;
+
+  border-radius: var(--radius-sm);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.alert-success {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.alert-warning {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.alert-danger {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8c3ba;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a298;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: var(--agro-gold);
+  color: var(--white);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(196, 154, 58, 0.45);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .container,
+  .page-container {
+    width: min(100% - 28px, 1200px);
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
+  .btn,
+  .primary-button,
+  .primary-btn,
+  .gold-button,
+  .secondary-button,
+  .outline-button,
+  .secondary-btn {
+    min-height: 42px;
+    padding: 10px 16px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .container,
+  .page-container {
+    width: calc(100% - 24px);
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
