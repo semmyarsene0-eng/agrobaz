@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // ================= COMPONENTS =================
@@ -10,7 +11,7 @@ import Commission from "./components/Commission";
 import Home from "./pages/Home";
 import Marketplace from "./pages/Marketplace";
 import ProductDetails from "./pages/ProductDetails.jsx";
-import Suppliers from "./pages/Suppliers";
+import Suppliers from "./components/Suppliers";
 import Contact from "./pages/Contact";
 import PriceMap from "./pages/PriceMap";
 import AIDoctor from "./pages/AIDoctor";
@@ -44,64 +45,20 @@ function App() {
       <Navbar />
 
       <Routes>
+        {/* PUBLIC */}
+        <Route path="/" element={<Home />} />
+        <Route path="/marketplace" element={<Marketplace />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/suppliers" element={<Suppliers />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/price-map" element={<PriceMap />} />
+        <Route path="/ai-doctor" element={<AIDoctor />} />
 
-        {/* =====================================================
-            PUBLIC PAGES
-        ===================================================== */}
+        {/* AUTH */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
-        <Route
-          path="/ai-doctor"
-          element={<AIDoctor />}
-        />
-
-        <Route
-          path="/marketplace"
-          element={<Marketplace />}
-        />
-
-        <Route
-          path="/price-map"
-          element={<PriceMap />}
-        />
-
-        <Route
-          path="/product/:id"
-          element={<ProductDetails />}
-        />
-
-        <Route
-          path="/suppliers"
-          element={<Suppliers />}
-        />
-
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
-
-        {/* =====================================================
-            AUTH
-        ===================================================== */}
-
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-
-        <Route
-          path="/register"
-          element={<Register />}
-        />
-
-        {/* =====================================================
-            BUYER ONLY
-        ===================================================== */}
-
+        {/* BUYER */}
         <Route
           path="/dashboard"
           element={
@@ -120,10 +77,7 @@ function App() {
           }
         />
 
-        {/* =====================================================
-            SELLER ONLY
-        ===================================================== */}
-
+        {/* SELLER */}
         <Route
           path="/seller-dashboard"
           element={
@@ -169,34 +123,13 @@ function App() {
           }
         />
 
-        {/* =====================================================
-            LOGGED-IN USERS
-        ===================================================== */}
+        {/* USER */}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/tracking" element={<OrderTracking />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
 
-        <Route
-          path="/profile"
-          element={<Profile />}
-        />
-
-        <Route
-          path="/orders"
-          element={<Orders />}
-        />
-
-        <Route
-          path="/tracking"
-          element={<OrderTracking />}
-        />
-
-        <Route
-          path="/order-success"
-          element={<OrderSuccess />}
-        />
-
-        {/* =====================================================
-            PUBLIC SELLER / BUYER PROFILES
-        ===================================================== */}
-
+        {/* PROFILES */}
         <Route
           path="/seller/:sellerId"
           element={<SellerProfile />}
@@ -207,10 +140,7 @@ function App() {
           element={<BuyerProfile />}
         />
 
-        {/* =====================================================
-            AFFILIATE
-        ===================================================== */}
-
+        {/* AFFILIATE */}
         <Route
           path="/affiliate-products"
           element={<AffiliateProducts />}
@@ -220,7 +150,6 @@ function App() {
           path="/affiliate-dashboard"
           element={<AffiliateDashboard />}
         />
-
       </Routes>
 
       <Footer />
@@ -229,3 +158,4 @@ function App() {
 }
 
 export default App;
+
