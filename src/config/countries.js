@@ -1,1 +1,60 @@
+const countries = [
+  {
+    code: "UG",
+    name: "Uganda",
+    currency: "UGX",
+    currencySymbol: "UGX",
+    language: "en",
+    region: "East Africa",
+  },
+  {
+    code: "KE",
+    name: "Kenya",
+    currency: "KES",
+    currencySymbol: "KSh",
+    language: "en",
+    region: "East Africa",
+  },
+  {
+    code: "TZ",
+    name: "Tanzania",
+    currency: "TZS",
+    currencySymbol: "TSh",
+    language: "sw",
+    region: "East Africa",
+  },
+  {
+    code: "RW",
+    name: "Rwanda",
+    currency: "RWF",
+    currencySymbol: "FRw",
+    language: "en",
+    region: "East Africa",
+  },
+  {
+    code: "NG",
+    name: "Nigeria",
+    currency: "NGN",
+    currencySymbol: "₦",
+    language: "en",
+    region: "West Africa",
+  },
+  {
+    code: "GH",
+    name: "Ghana",
+    currency: "GHS",
+    currencySymbol: "GH₵",
+    language: "en",
+    region: "West Africa",
+  },
+  {
+    code: "ZA",
+    name: "South Africa",
+    currency: "ZAR",
+    currencySymbol: "R",
+    language: "en",
+    region: "Southern Africa",
+  },
+];
 
+export default countries;
