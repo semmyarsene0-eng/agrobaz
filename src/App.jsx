@@ -40,7 +40,11 @@ import AffiliateProducts from "./pages/AffiliateProducts";
 import AffiliateDashboard from "./pages/AffiliateDashboard";
 
 function App() {
+  const currentCountry = marketConfig.defaultCountry;
   return (
+    <div>
+  Current market: {currentCountry}
+</div>
     <BrowserRouter>
       <Navbar />
 
